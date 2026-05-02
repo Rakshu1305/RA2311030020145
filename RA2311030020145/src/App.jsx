@@ -43,6 +43,7 @@ function App() {
   };
   return (
     <div style={{ maxWidth: 600, margin: '0 auto', padding: '24px 16px', fontFamily: 'sans-serif' }}>
+
       {/* ── User Management ── */}
       <h1 style={{ fontSize: 22, marginBottom: 16 }}>User Management</h1>
 
@@ -66,14 +67,18 @@ function App() {
           Add User
         </button>
       </div>
+
       {users.map(user => (
         <div key={user.id} style={{ padding: '8px 0', borderBottom: '1px solid #eee', fontSize: 14 }}>
           {user.name} — {user.email}
         </div>
       ))}
+
       <hr style={{ margin: '24px 0', border: 'none', borderTop: '1px solid #eee' }} />
+
       {/* ── Priority Inbox ── */}
       <h2 style={{ fontSize: 18, marginBottom: 12 }}>Priority Inbox</h2>
+
       {topNotifications.map((notif, index) => (
         <div
           key={notif.ID}
@@ -88,10 +93,13 @@ function App() {
             alignItems: 'flex-start',
           }}
         >
+          {/* Rank */}
           <span style={{ fontSize: 13, color: '#999', minWidth: 24, marginTop: 2 }}>
             #{index + 1}
           </span>
+
           <div>
+            {/* Type badge */}
             <span
               style={{
                 fontSize: 11,
@@ -103,9 +111,13 @@ function App() {
             >
               {notif.Type}
             </span>
+
+            {/* Message */}
             <div style={{ fontSize: 14, fontWeight: 600, margin: '4px 0 2px' }}>
               {notif.Message}
             </div>
+
+            {/* Timestamp */}
             <div style={{ fontSize: 12, color: '#999' }}>
               {notif.Timestamp}
             </div>
@@ -115,5 +127,4 @@ function App() {
     </div>
   );
 }
-export default App;
 export default App;
